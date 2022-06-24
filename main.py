@@ -40,23 +40,23 @@ for i, row in df.iterrows():
 reviews_test['sentiment'] = pd.to_numeric(reviews_test.sentiment, downcast='integer')
 
 #Load clf
-f = open(r'data/Classifier/dataCleaning.DT', 'rb')
+f = open(r'data/classifier/dataCleaning.DT', 'rb')
 classifier_DT = pickle.load(f)
 f.close()
 
-f = open(r'data/Classifier/dataCleaning.SVM', 'rb')
+f = open(r'data/classifier/dataCleaning.SVM', 'rb')
 classifier_SVM = pickle.load(f)
 f.close()
 
-f = open(r'data/Classifier/dataCleaning.NB', 'rb')
+f = open(r'data/classifier/dataCleaning.NB', 'rb')
 classifier_NB = pickle.load(f)
 f.close()
 
-f = open(r'data/Classifier/dataCleaning.LR', 'rb')
+f = open(r'data/classifier/dataCleaning.LR', 'rb')
 classifier_LR = pickle.load(f)
 f.close()
 
-f = open(r'data/Classifier/dataCleaning.GB', 'rb')
+f = open(r'data/classifier/dataCleaning.GB', 'rb')
 classifier_GB = pickle.load(f)
 f.close()
 
@@ -143,21 +143,21 @@ class_names = np.array(['negative', 'neutral', 'positive'])
 explainer = LimeTextExplainer(class_names=class_names)
 
 # import Explainer SVM
-with open(r'data/Explainer/ExplainerSVM', 'rb') as f:
+with open(r'data/explainer/ExplainerSVM', 'rb') as f:
   exp_SVM = dill.load(f)
 
 # import Explainer DT
-with open(r'data/Explainer/ExplainerDT', 'rb') as f:
+with open(r'data/explainer/ExplainerDT', 'rb') as f:
   exp_DT = dill.load(f)
 
 # import Explainer NB
-with open(r'data/Explainer/ExplainerNB', 'rb') as f:
+with open(r'data/explainer/ExplainerNB', 'rb') as f:
   exp_NB = dill.load(f)
 
 # import Explainer LR
-with open(r'data/Explainer/ExplainerLR', 'rb') as f:
+with open(r'data/explainer/ExplainerLR', 'rb') as f:
   exp_LR = dill.load(f)
 
 # import Explainer GB
-with open(r'data/Explainer/ExplainerGB', 'rb') as f:
+with open(r'data/explainer/ExplainerGB', 'rb') as f:
   exp_GB = dill.load(f)
