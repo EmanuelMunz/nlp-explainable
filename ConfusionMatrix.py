@@ -1,11 +1,9 @@
 #imports
 
-from main import y_test, test_vectors
 from sklearn.metrics import confusion_matrix
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 
 # Funktion zur Erstellung der Konfusionsmatrix
 def make_confusion_matrix(cf,
@@ -42,7 +40,7 @@ def make_confusion_matrix(cf,
     title:         Title for the heatmap. Default is None.
     '''
 
-    # CODE TO GENERATE TEXT INSIDE EACH SQUARE
+   # CODE TO GENERATE TEXT INSIDE EACH SQUARE
     blanks = ['' for i in range(cf.size)]
 
     if group_names and len(group_names) == cf.size:
@@ -113,5 +111,5 @@ def createCM(classifier,title, y_test, test_vectors ):
     #     pred_str.append(dictionary_reverse[i])
 
     cf_matrix_test = confusion_matrix(y_test, pred)
-    print(cf_matrix_test)
+   # print(cf_matrix_test)
     make_confusion_matrix(cf_matrix_test, figsize=(8, 6), cbar=False, title= title, normalize=True)
