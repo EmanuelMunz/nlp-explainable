@@ -90,16 +90,16 @@ reviews_test['body'].head()
 
 
 # used to delete emojis
-punct = string.punctuation
-print(punct)
+#punct = string.punctuation
+#print(punct)
 
 # Loading Spacy small model as nlp
-nlp = spacy.load("en_core_web_sm")
+#nlp = spacy.load("en_core_web_sm")
 
 # Gathering all the stopwords
-from spacy.lang.en.stop_words import STOP_WORDS
-stopwords = list(STOP_WORDS)
-print(len(stopwords))
+#from spacy.lang.en.stop_words import STOP_WORDS
+#stopwords = list(STOP_WORDS)
+#print(len(stopwords))
 
 # dataCleaning method
 #def dataCleaning(sentence):
