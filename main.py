@@ -88,36 +88,6 @@ reviews_test['body'] = reviews_test['body'].apply(lambda x: x.lower()) #transfor
 reviews_test['body'] = reviews_test['body'].apply(lambda x: re.sub('[^a-zA-z0-9\s]', '', x))
 reviews_test['body'].head()
 
-
-# used to delete emojis
-#punct = string.punctuation
-#print(punct)
-
-# Loading Spacy small model as nlp
-#nlp = spacy.load("en_core_web_sm")
-
-# Gathering all the stopwords
-#from spacy.lang.en.stop_words import STOP_WORDS
-#stopwords = list(STOP_WORDS)
-#print(len(stopwords))
-
-# dataCleaning method
-#def dataCleaning(sentence):
-#  doc = nlp(sentence)
-#  tokens = []
-#  for token in doc:
-#    if token.lemma_ != '-PRON-':
-#      temp = token.lemma_.lower().strip()
-#    else:
-#      temp = token.lower_
-#    tokens.append(temp)
-#  clean_tokens = []
-#  for token in tokens:
-#    if token not in punct and token not in stopwords:
-#      clean_tokens.append(token)
-#  return clean_tokens
-
-
 #Load vectorizer
 # load tfidf-vectorizer
 # load pickle
@@ -129,7 +99,6 @@ reviews_test['body'].head()
 from scipy import sparse
 f = open(r'data/Vectorizer/yourmatrix.npz', 'rb')
 test_vectors = sparse.load_npz(f)
-
 
 #Prediction
 y_test = reviews_test['sentiment']
