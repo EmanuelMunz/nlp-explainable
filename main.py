@@ -40,46 +40,46 @@ for i, row in df.iterrows():
 reviews_test['sentiment'] = pd.to_numeric(reviews_test.sentiment, downcast='integer')
 
 #Load clf
-f = open(r'data\Classifier\dataCleaning.DT', 'rb')
+f = open(r'data/Classifier/dataCleaning.DT', 'rb')
 classifier_DT = pickle.load(f)
 f.close()
 
-f = open(r'data\Classifier\dataCleaning.SVM', 'rb')
+f = open(r'data/Classifier/dataCleaning.SVM', 'rb')
 classifier_SVM = pickle.load(f)
 f.close()
 
-f = open(r'data\Classifier\dataCleaning.NB', 'rb')
+f = open(r'data/Classifier/dataCleaning.NB', 'rb')
 classifier_NB = pickle.load(f)
 f.close()
 
-f = open(r'data\Classifier\dataCleaning.LR', 'rb')
+f = open(r'data/Classifier/dataCleaning.LR', 'rb')
 classifier_LR = pickle.load(f)
 f.close()
 
-f = open(r'data\Classifier\dataCleaning.GB', 'rb')
+f = open(r'data/Classifier/dataCleaning.GB', 'rb')
 classifier_GB = pickle.load(f)
 f.close()
 
 #load important words
-df0_NB = pd.read_csv(r'data\ImpWords\df0_NB.csv')
-df1_NB = pd.read_csv(r'data\ImpWords\df1_NB.csv')
-df2_NB = pd.read_csv(r'data\ImpWords\df2_NB.csv')
+df0_NB = pd.read_csv(r'data/ImpWords/df0_NB.csv')
+df1_NB = pd.read_csv(r'data/ImpWords/df1_NB.csv')
+df2_NB = pd.read_csv(r'data/ImpWords/df2_NB.csv')
 
-df0_SVM = pd.read_csv(r'data\ImpWords\df0_SVM.csv')
-df1_SVM = pd.read_csv(r'data\ImpWords\df1_SVM.csv')
-df2_SVM = pd.read_csv(r'data\ImpWords\df2_SVM.csv')
+df0_SVM = pd.read_csv(r'data/ImpWords/df0_SVM.csv')
+df1_SVM = pd.read_csv(r'data/ImpWords/df1_SVM.csv')
+df2_SVM = pd.read_csv(r'data/ImpWords/df2_SVM.csv')
 
-df0_LR = pd.read_csv(r'data\ImpWords\df0_LR.csv')
-df1_LR = pd.read_csv(r'data\ImpWords\df1_LR.csv')
-df2_LR = pd.read_csv(r'data\ImpWords\df2_LR.csv')
+df0_LR = pd.read_csv(r'data/ImpWords/df0_LR.csv')
+df1_LR = pd.read_csv(r'data/ImpWords/df1_LR.csv')
+df2_LR = pd.read_csv(r'data/ImpWords/df2_LR.csv')
 
-df0_DT = pd.read_csv(r'data\ImpWords\df0_DT.csv')
-df1_DT = pd.read_csv(r'data\ImpWords\df1_DT.csv')
-df2_DT = pd.read_csv(r'data\ImpWords\df2_DT.csv')
+df0_DT = pd.read_csv(r'data/ImpWords/df0_DT.csv')
+df1_DT = pd.read_csv(r'data/ImpWords/df1_DT.csv')
+df2_DT = pd.read_csv(r'data/ImpWords/df2_DT.csv')
 
-df0_GB = pd.read_csv(r'data\ImpWords\df0_GB.csv')
-df1_GB = pd.read_csv(r'data\ImpWords\df1_GB.csv')
-df2_GB = pd.read_csv(r'data\ImpWords\df2_GB.csv')
+df0_GB = pd.read_csv(r'data/ImpWords/df0_GB.csv')
+df1_GB = pd.read_csv(r'data/ImpWords/df1_GB.csv')
+df2_GB = pd.read_csv(r'data/ImpWords/df2_GB.csv')
 
 #Preprocessing testdata
 # test set preprocessing
@@ -121,13 +121,13 @@ reviews_test['body'].head()
 #Load vectorizer
 # load tfidf-vectorizer
 # load pickle
-#vec = pickle.load(open(r'data\Vectorizer\vector.pickle.SVM", "rb"))
+#vec = pickle.load(open(r'data/Vectorizer/vector.pickle.SVM", "rb"))
 #test_vectors = vec.transform(reviews_test.body)
 #print(test_vectors.shape)
 
 #Load test_vectors (instead of vectorizer)
 from scipy import sparse
-f = open(r'data\Vectorizer\yourmatrix.npz', 'rb')
+f = open(r'data/Vectorizer/yourmatrix.npz', 'rb')
 test_vectors = sparse.load_npz(f)
 
 
@@ -143,21 +143,21 @@ class_names = np.array(['negative', 'neutral', 'positive'])
 explainer = LimeTextExplainer(class_names=class_names)
 
 # import Explainer SVM
-with open(r'data\Explainer\ExplainerSVM', 'rb') as f:
+with open(r'data/Explainer/ExplainerSVM', 'rb') as f:
   exp_SVM = dill.load(f)
 
 # import Explainer DT
-with open(r'data\Explainer\ExplainerDT', 'rb') as f:
+with open(r'data/Explainer/ExplainerDT', 'rb') as f:
   exp_DT = dill.load(f)
 
 # import Explainer NB
-with open(r'data\Explainer\ExplainerNB', 'rb') as f:
+with open(r'data/Explainer/ExplainerNB', 'rb') as f:
   exp_NB = dill.load(f)
 
 # import Explainer LR
-with open(r'data\Explainer\ExplainerLR', 'rb') as f:
+with open(r'data/Explainer/ExplainerLR', 'rb') as f:
   exp_LR = dill.load(f)
 
 # import Explainer GB
-with open(r'data\Explainer\ExplainerGB', 'rb') as f:
+with open(r'data/Explainer/ExplainerGB', 'rb') as f:
   exp_GB = dill.load(f)
