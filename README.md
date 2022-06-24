@@ -1,3 +1,4 @@
 NLP visualizement app deployed on Heroku
 
-The App uses following libraries
+It works with 5 sentiment classificators; NB,SVM,DT,LR,GB.
+They were trained on Amazon film reviews.
