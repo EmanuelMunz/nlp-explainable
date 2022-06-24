@@ -20,9 +20,9 @@ def main():
     #explain field
     expander = st.expander("See explanation")
     expander.write("""
-         This dashboard makes 5 different sentiment classifier explainable. They are trained on amazon movie reviews. This dashboard 
-         uses LIME, a framework for XAI.
-     """)
+         This dashboard makes 5 different Machine Learning sentiment classifier explainable. 
+         A Decision Tree Classifier(DT), Support Vector Machine(SVM), Naive Bayes(NB), Decision Tree(DT) and a Gradient Boosting (GB) classifier. 
+         They are trained on amazon movie reviews. This dashboard uses LIME, a framework for XAI.""")
 
     #Seperator line
     st.markdown("""<hr style="height:10px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
