@@ -60,10 +60,9 @@ def main():
         # explain field
         expander = st.expander("See explanation")
         expander.write("""
-             The chart above shows some numbers I picked for you.
-             I rolled actual dice for these, so they're *guaranteed* to
-             be random.
-         """)
+             The Single Review Analysis can show how large of an impact single words have on each 
+            review sentiment prediction. It also shows the Prediction probabilities for the three sentiment gradations 
+            (positive, neutral, negative).""")
 
         revindex = st.sidebar.number_input('Insert index of checked review', min_value = 0, max_value = 599, value =  0, step =  1 )
 
