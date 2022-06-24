@@ -21,7 +21,7 @@ import dill
 
 #Load testset
 
-reviews_test = pd.read_csv(r'data\MovieDatensatz6_Testset.csv')
+reviews_test = pd.read_csv(r'data/MovieDatensatz6_Testset.csv')
 
 #copy dataframe for dataframe visualization
 df_show = reviews_test.copy()
