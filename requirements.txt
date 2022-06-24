@@ -1,6 +1,5 @@
 
 dill                         ==0.3.5.1
-en-core-web-sm               ==3.3.0
 h5py                         ==3.7.0
 keras                        ==2.9.0
 lime                         ==0.2.0.1
