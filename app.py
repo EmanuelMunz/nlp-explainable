@@ -118,7 +118,7 @@ def main():
         # explain field
         expander = st.expander("See explanation")
         expander.write("""
-             The confusion matrix shows the accuracy of the classifier on the test set. It is useable to identify in what scenarios 
+             The confusion matrix shows the accuracy of the classifier on the test set. It is used to identify in what scenarios 
              the classifier perform well or bad.
          """)
 
