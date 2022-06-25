@@ -1,3 +1,4 @@
+# design configuration
 def color_df(val):
     if val == 1:
         color = 'lightgreen'
