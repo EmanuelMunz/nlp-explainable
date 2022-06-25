@@ -45,7 +45,7 @@ def main():
         It includes additional information whether the classifier predicted the underlying review correctly. By clicking on the
         headers of the columns you can filter the reviews.
      """)
-
+    # show chosen number of reviews
     nb_rows = st.slider('Number of reviews to display', min_value=2, max_value=600, value=5, step=None,
                         format=None)
     #st.dataframe(df_show.head(nb_rows))
@@ -67,14 +67,10 @@ def main():
         revindex = st.sidebar.number_input('Insert index of checked review', min_value = 0, max_value = 599, value =  0, step =  1 )
 
         selsingleclf = st.sidebar.multiselect("Choose the classifiers", ["DT","SVM","NB","LR","GB"], key=1)
-        #st.write("You selected", options)
 
-
-
-        #def highlight pred_wrong:
-
-        ##### Platzhalter Highlight Funktion
-
+        ##### placeholder highlight function
+    
+        # show examined review
         #st.write('Text of the review: '+ df_show['body'][revindex])
         textbody = (df_show['body'][revindex])
         #st.subheader('Text of review '+str(revindex))
@@ -89,7 +85,7 @@ def main():
         #reviews_subset = reviews_subset(revindex)
         #st.dataframe(reviews_subset.head())
 
-        # Explainer single review
+        # Explainers single review
         if "DT" in selsingleclf:
             st.subheader('DT')
             components.html(exp_DT[revindex].as_html(),width = 1800, height = 250)
@@ -121,7 +117,7 @@ def main():
              The confusion matrix shows the accuracy of the classifier on the test set. It is used to identify in what scenarios 
              the classifier perform well or bad.
          """)
-
+        # conf. matrix selection
         confmatr = st.sidebar.multiselect("Choose the classifiers", ["DT", "SVM", "NB", "LR", "GB"], key=2)
         col1, col2 = st.columns(2)
         # Wie viele clf sind ausgewählt in Dropdown?
@@ -184,7 +180,8 @@ def main():
              The multiple review analysis shows the most important words on each label and classifier. They are ordered from highest to lower  
              impact. The number in the bar shows how often the word influenced the sentiment prediction based on the test set.
          """)
-
+        
+        #choose multi review classifiers
         selmulclf = st.sidebar.multiselect("Choose the classifiers", ["DT", "SVM", "NB", "LR", "GB"], key=3)
         amountWords_show = st.slider('Number of words to display', min_value=1, max_value=20, value=5, step=None,
                             format=None)
@@ -248,9 +245,6 @@ def main():
         #     st.markdown("""The Beeswarmplot is a plot of all the SHAP values. The values are grouped by the features on the y-axis. For
         # each group, the colour of the points is determined by the value of the same feature (i.e. higher feature values
         # are redder). The features are ordered by the mean SHAP values.""")
-
-
-
-
+     
 if __name__ == '__main__':
     main()
