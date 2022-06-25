@@ -1,8 +1,5 @@
-
+# imports
 import pip
-# pip.main(['install','spacy==2.2.0'])
-#pip.main(['install','dill'])
-#pip.main(['install','seaborn'])
 
 import pandas as pd
 import numpy as np
@@ -27,7 +24,7 @@ reviews_test = pd.read_csv(r'data/MovieDatensatz6_Testset.csv')
 df_show = reviews_test.copy()
 df_show = df_show.drop(columns='sentiment')
 
-
+#change labels into readable form
 reviews_test['label'] = 'positive'
 df = reviews_test.copy()
 for i, row in df.iterrows():
