@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Funktion zur Erstellung der Konfusionsmatrix
+# Function to create the Confusionmatrix
 def make_confusion_matrix(cf,
                           group_names=None,
                           categories= ['negative','neutral','positive'],
