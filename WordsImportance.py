@@ -1,16 +1,14 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from main import df0_NB,df1_NB,df2_NB,df0_SVM,df1_SVM,df2_SVM,df0_LR,df1_LR,df2_LR,df0_DT,df1_DT,df2_DT,df0_GB,df1_GB,df2_GB
+#This file creates the Mulit Review analysis
 
-
-
-
-#Funktion für Anzahl anzeige im Balken
+#Function to show bars and specifically their number of occurences
 def add_value_label(x_list,y_list,list_count):
     for i in range(1, len(x_list)+1):
         plt.text(i-1,y_list[i-1]/2,list_count[i-1], ha="center")
 
-#Funktion erstellen Plot
+#create Plot function
 def make_importantWordsPlot (classifier, Anzahl, label):
 
     if classifier == 'NB':
