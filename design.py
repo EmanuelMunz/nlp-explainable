@@ -5,4 +5,3 @@ def color_df(val):
     else :
         color = 'lightcoral'
     return f'background-color: {color}'
-[^1]: created by Emanuel Munz & Jannis Wild; 2021
